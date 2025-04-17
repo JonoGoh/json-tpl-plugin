@@ -1,0 +1,23 @@
+<idea-plugin>
+  <id>dev.jonogoh.json-tpl-plugin</id>
+  <name>JSON TPL Support</name>
+  <version>1.0.0</version>
+  <vendor>JonoGoh</vendor>
+
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.json</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType
+      name="JSON Template"
+      implementationClass="com.intellij.json.JsonFileType"
+      fieldName="INSTANCE"
+      language="JSON"
+      extensions="json.tpl"/>
+  </extensions>
+  <extensions defaultExtensionNs="com.intellij.lang">
+    <inspectionSuppressor
+      language="JSON"
+      implementationClass="dev.jonogoh.JsonTplSuppressor"/>
+  </extensions>
+</idea-plugin>
